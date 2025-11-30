@@ -75,7 +75,7 @@ def get_series_cover(manga_name: str):
 async def on_ready():
     print("Bot aktif!")
     fetchUpdates.start()
-    await client.change_presence(activity=discord.Game(name="cmd: ++search"))
+    await client.change_presence(activity=discord.Game(name="Manga Okuyor..."))
 
 
 # ───────────────────────────────────────────────
@@ -180,7 +180,7 @@ async def fetchUpdates():
                 manga_title = label
 
             if manga_title is None:
-                manga_title = "Bilinmeyen Manga"
+                manga_title = "Bilinmeyen Seri"
 
             # ─────────────────────────────
             # 2) Bölüm numarası
@@ -215,7 +215,7 @@ async def fetchUpdates():
             ))
 
             embed.add_field(
-                name="📘 Manga İsmi",
+                name="📘 Seri İsmi",
                 value=f"**{manga_title}**",
                 inline=False,
             )
